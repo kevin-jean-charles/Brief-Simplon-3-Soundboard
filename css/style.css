@@ -63,8 +63,10 @@ button.sound-active {
 /* DECOMMENTER LES LIGNES EN DESSOUS ET COMPLETER LES 
   cela permettra d'ajouter une règle de mise en forme de 
  */
-/* @media screen and () {
+   @media screen and (max-width: 480px) {
   .btn-container {
-
+    display: flex;
+    justify-content: center;
+    margin: 0 5%;
   }
-} */
+} 
