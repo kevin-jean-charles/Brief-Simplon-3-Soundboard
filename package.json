@@ -1,12 +1,24 @@
 {
   "name": "SoundBoard",
   "version": "1.0.0",
-  "description": "",
+  "description": "Plan d'action\r - Installer et utiliser parcel\r - Ajouter les 6 points manquants\r - Ajouter les audios au document html\r - Changer la disposition des points pour la version mobile\r - récuperer les id des audios et boutons dans des tableaux  \r - Faire la fonction qui detecte la touche appuyer l'event keydow et key.Code\r - Faire la fonction qui joue l'audio avec play\r - Faire la fonction qui stop l'audio pause\r - Faire la fonctino qui changer la couleur pour un temps avec setTimerout",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinJCMotived/Brief-Simplon-3-Soundboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kevinJCMotived/Brief-Simplon-3-Soundboard/issues"
+  },
+  "homepage": "https://github.com/kevinJCMotived/Brief-Simplon-3-Soundboard#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
 }
