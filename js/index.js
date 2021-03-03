@@ -24,55 +24,88 @@ const tabAudi = [audio1, audio2, audio3, audio4, audio5, audio6, audio7, audio8,
 
 const tabCode = [65, 90, 69, 82, 89, 85, 73, 79, 80];
 
-tabBtn.forEach(btn => btn.addEventListener('keydown', playAudio));
-function playAudio(key) {
 
+window.addEventListener("keydown", playAudio);
+
+function playAudio(key) {
+  stopPlay();
   switch (key.keyCode) {
     //a
     case 65:
       audio1.play();
-      console.log("sup");
+      btn1.classList.add('sound-active');
+      setTimeout(stopColor, 4500);
       break;
     
     //z
     case 90:
-
+      audio2.play();
+      btn2.classList.add('sound-active');
+      setTimeout(stopColor, 4000);
       break;
 
     //e
     case 69:
-
+      audio3.play();
+      btn3.classList.add('sound-active');
+      setTimeout(stopColor, 500);
       break;
 
     //r
     case 82:
-
+      audio4.play();
+      btn4.classList.add('sound-active');
+      setTimeout(stopColor, 1500);
       break;
 
     //y
     case 89:
-
+      audio5.play();
+      btn5.classList.add('sound-active');
+      setTimeout(stopColor, 1000);
       break;
 
     //u
     case 85:
-      console.log("nop");
+      audio6.play();
+      btn6.classList.add('sound-active');
+      setTimeout(stopColor, 10000);
       break;
   
     //i
     case 73:
-
+      audio7.play();
+      btn7.classList.add('sound-active');
+      setTimeout(stopColor, 500);
       break;
 
     //o
     case 79:
-
+      audio8.play();
+      btn8.classList.add('sound-active');
+      setTimeout(stopColor, 1000);
       break;
 
     //p
     case 80:
-
+      audio9.play();
+      btn9.classList.add('sound-active');
+      setTimeout(stopColor, 1000);
       break;
-
   }
+}
+
+function stopPlay() {
+  tabAudi.forEach((audio) =>{
+    audio.pause();
+    audio.currentTime = 0;
+    setTimeout(stopColor, 4000);
+  })
+
+}
+
+function stopColor() {
+  tabBtn.forEach((btn) => {
+    btn.classList.remove('sound-active')
+  })
 }
