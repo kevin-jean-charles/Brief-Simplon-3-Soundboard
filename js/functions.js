@@ -76,3 +76,7 @@ function stopColor(index) {
 
 
 export { startPlaying, testKey, playAudio, bgChange, stopPlay, stopColor }
+
+
+
+//TODO Séparer les fonctions

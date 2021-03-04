@@ -200,13 +200,18 @@ function stopColor(index) {
       });
     });
   });
-}
+} //TODO Séparer les fonctions
 },{}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
 var _functions = require("./functions");
 
-(0, _functions.startPlaying)();
+(0, _functions.startPlaying)(); //Todo :
+//Ajouter mes audios beat box
+// Créer un tableau qui stockera mes audios
+//Créer un bouton et un fonction qui changera le les sons joués
+//Faire un fonction qui demarre et arrete un record de son avec un bouton
+//Faire un fonction qui joue le record
 },{"./functions":"js/functions.js"}],"../../../../Users/Photocopie/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
