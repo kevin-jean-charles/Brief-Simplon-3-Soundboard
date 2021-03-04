@@ -1,4 +1,3 @@
-
 //DEclatration des sound
 const btn1 = document.getElementById("btn__sound-1");
 const btn2 = document.getElementById("btn__sound-2");
@@ -30,8 +29,9 @@ const tabAudi = [audio1, audio2, audio3, audio4, audio5, audio6, audio7, audio8,
 
 //tab de code des touche du clavier
 const tabKey = [65, 90, 69, 82, 89, 85, 73, 79, 80];
-/////////////////////////////////////////
 
+
+/////////////////////////////////////////
 
 //Fonction qui demare tout !!!!!!
 function startPlaying() {  
@@ -63,21 +63,15 @@ function stopPlay() {
 }
 //fonction qui change la couleur
 function bgChange(index) {
-
   tabBtn[index].classList.add("sound-active");
   stopColor();
 }
+
 //fonction qui arrete la couleur 
-function stopColor() {
-  setTimeout(() =>{tabBtn[0].classList.remove("sound-active")}, 5000);
-  setTimeout(() =>{tabBtn[1].classList.remove("sound-active")}, 5000);
-  setTimeout(() =>{tabBtn[2].classList.remove("sound-active")}, 1000);
-  setTimeout(() =>{tabBtn[3].classList.remove("sound-active")}, 1000);
-  setTimeout(() =>{tabBtn[4].classList.remove("sound-active")}, 1000);
-  setTimeout(() =>{tabBtn[5].classList.remove("sound-active")}, 10000);
-  setTimeout(() =>{tabBtn[6].classList.remove("sound-active")}, 4000);
-  setTimeout(() =>{tabBtn[7].classList.remove("sound-active")}, 4000);
-  setTimeout(() =>{tabBtn[8].classList.remove("sound-active")}, 4000);
+function stopColor(index) {
+  tabBtn.forEach(btn => tabAudi.forEach(audio => audio.addEventListener('ended', () => {
+    btn.classList.remove("sound-active");
+    })))
 }
 
 

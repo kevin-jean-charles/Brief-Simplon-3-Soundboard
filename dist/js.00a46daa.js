@@ -192,34 +192,14 @@ function bgChange(index) {
 } //fonction qui arrete la couleur 
 
 
-function stopColor() {
-  setTimeout(function () {
-    tabBtn[0].classList.remove("sound-active");
-  }, 5000);
-  setTimeout(function () {
-    tabBtn[1].classList.remove("sound-active");
-  }, 5000);
-  setTimeout(function () {
-    tabBtn[2].classList.remove("sound-active");
-  }, 1000);
-  setTimeout(function () {
-    tabBtn[3].classList.remove("sound-active");
-  }, 1000);
-  setTimeout(function () {
-    tabBtn[4].classList.remove("sound-active");
-  }, 1000);
-  setTimeout(function () {
-    tabBtn[5].classList.remove("sound-active");
-  }, 10000);
-  setTimeout(function () {
-    tabBtn[6].classList.remove("sound-active");
-  }, 4000);
-  setTimeout(function () {
-    tabBtn[7].classList.remove("sound-active");
-  }, 4000);
-  setTimeout(function () {
-    tabBtn[8].classList.remove("sound-active");
-  }, 4000);
+function stopColor(index) {
+  tabBtn.forEach(function (btn) {
+    return tabAudi.forEach(function (audio) {
+      return audio.addEventListener('ended', function () {
+        btn.classList.remove("sound-active");
+      });
+    });
+  });
 }
 },{}],"js/index.js":[function(require,module,exports) {
 "use strict";
@@ -255,7 +235,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63129" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49678" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -20,5 +20,8 @@
   "homepage": "https://github.com/kevinJCMotived/Brief-Simplon-3-Soundboard#readme",
   "devDependencies": {
     "parcel-bundler": "^1.12.3"
+  },
+  "dependencies": {
+    "moment": "^2.29.1"
   }
 }
