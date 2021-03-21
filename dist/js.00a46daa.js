@@ -212,7 +212,7 @@ var _functions = require("./functions");
 //Créer un bouton et un fonction qui changera le les sons joués
 //Faire un fonction qui demarre et arrete un record de son avec un bouton
 //Faire un fonction qui joue le record
-},{"./functions":"js/functions.js"}],"../../../../Users/Photocopie/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./functions":"js/functions.js"}],"../../../Users/Photocopie/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -240,7 +240,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49678" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54798" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -415,5 +415,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../Users/Photocopie/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/index.js"], null)
+},{}]},{},["../../../Users/Photocopie/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/index.js"], null)
 //# sourceMappingURL=/js.00a46daa.js.map
