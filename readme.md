@@ -10,4 +10,20 @@ Plan d'action
 - Faire la fonction qui changer la couleur pour un temps avec setTimerout
 
 
+Update : 
+/* - - - - - Plan d'action  - - - - - */
+
+//Pour chaque touche
+
+ //Si touche appuyer vaut un audio 
+
+ //Alors jouer audio
+
+ //Si bg blanc
+   //Changer bg couleur 
+   
+  //Si audio end
+   //Alors changer bg
+
+/* - - - - - Plan d'action - - - - - */
 

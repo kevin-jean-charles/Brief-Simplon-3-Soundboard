@@ -117,102 +117,91 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/functions.js":[function(require,module,exports) {
+})({"js/item.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.startPlaying = startPlaying;
-exports.testKey = testKey;
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Item = function Item(button, key, audio) {
+  _classCallCheck(this, Item);
+
+  this.button = button;
+  this.key = key;
+  this.audio = audio;
+};
+
+exports.default = Item;
+},{}],"js/fonction.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.playAudio = playAudio;
 exports.bgChange = bgChange;
-exports.stopPlay = stopPlay;
-exports.stopColor = stopColor;
-//DEclatration des sound
-var btn1 = document.getElementById("btn__sound-1");
-var btn2 = document.getElementById("btn__sound-2");
-var btn3 = document.getElementById("btn__sound-3");
-var btn4 = document.getElementById("btn__sound-4");
-var btn5 = document.getElementById("btn__sound-5");
-var btn6 = document.getElementById("btn__sound-6");
-var btn7 = document.getElementById("btn__sound-7");
-var btn8 = document.getElementById("btn__sound-8");
-var btn9 = document.getElementById("btn__sound-9"); //Declaration des audios
 
-var audio1 = document.getElementById("audio-1");
-var audio2 = document.getElementById("audio-2");
-var audio3 = document.getElementById("audio-3");
-var audio4 = document.getElementById("audio-4");
-var audio5 = document.getElementById("audio-5");
-var audio6 = document.getElementById("audio-6");
-var audio7 = document.getElementById("audio-7");
-var audio8 = document.getElementById("audio-8");
-var audio9 = document.getElementById("audio-9"); //Tab des boutons
-
-var tabBtn = [btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9]; //tab des sons
-
-var tabAudi = [audio1, audio2, audio3, audio4, audio5, audio6, audio7, audio8, audio9]; //tab de code des touche du clavier
-
-var tabKey = [65, 90, 69, 82, 89, 85, 73, 79, 80]; /////////////////////////////////////////
-//Fonction qui demare tout !!!!!!
-
-function startPlaying() {
-  window.addEventListener("keydown", testKey);
-} //fonction qui test les touches
+//jouer audio
+function playAudio(audio) {
+  stopAudio(audio);
+  audio.play();
+} //arreter audio
 
 
-function testKey(key) {
-  for (var index = 0; index <= tabKey.length; index++) {
-    if (key.keyCode == tabKey[index]) {
-      playAudio(index);
-      bgChange(index);
-    }
+function stopAudio(audio) {
+  audio.currentTime = 0;
+  audio.pause();
+} //changer bg
+
+
+function bgChange(button, audio) {
+  if (!button.classList.contains("sound-active")) {
+    button.classList.add("sound-active");
+    console.log("ok2");
   }
-} //function qui joue
 
-
-function playAudio(index) {
-  stopPlay(index);
-  tabAudi[index].play();
-} //fonction qui stop la musique
-
-
-function stopPlay() {
-  tabAudi.forEach(function (audio) {
-    audio.pause();
-    audio.currentTime = 0;
+  audio.addEventListener("ended", function () {
+    button.classList.remove("sound-active");
   });
-} //fonction qui change la couleur
-
-
-function bgChange(index) {
-  tabBtn[index].classList.add("sound-active");
-  stopColor();
-} //fonction qui arrete la couleur 
-
-
-function stopColor(index) {
-  tabBtn.forEach(function (btn) {
-    return tabAudi.forEach(function (audio) {
-      return audio.addEventListener('ended', function () {
-        btn.classList.remove("sound-active");
-      });
-    });
-  });
-} //TODO Séparer les fonctions
+}
 },{}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
-var _functions = require("./functions");
+var _item = _interopRequireDefault(require("./item"));
 
-(0, _functions.startPlaying)(); //Todo :
-//Ajouter mes audios beat box
-// Créer un tableau qui stockera mes audios
-//Créer un bouton et un fonction qui changera le les sons joués
-//Faire un fonction qui demarre et arrete un record de son avec un bouton
-//Faire un fonction qui joue le record
-},{"./functions":"js/functions.js"}],"../../../Users/Photocopie/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var _fonction = require("./fonction");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var baguetteBattrie = new _item.default(document.getElementById("btn__sound-1"), "a", document.getElementById("audio-1"));
+var baguetteBattrieBlague = new _item.default(document.getElementById("btn__sound-2"), "z", document.getElementById("audio-2"));
+var caisseClaire1 = new _item.default(document.getElementById("btn__sound-3"), "e", document.getElementById("audio-3"));
+var caisseClaire4 = new _item.default(document.getElementById("btn__sound-4"), "r", document.getElementById("audio-4"));
+var charlestonFermee = new _item.default(document.getElementById("btn__sound-5"), "y", document.getElementById("audio-5"));
+var cymbaleRide = new _item.default(document.getElementById("btn__sound-6"), "u", document.getElementById("audio-6"));
+var tomAigu1 = new _item.default(document.getElementById("btn__sound-7"), "i", document.getElementById("audio-7"));
+var tomGrave1 = new _item.default(document.getElementById("btn__sound-8"), "o", document.getElementById("audio-8"));
+var tomGrave4 = new _item.default(document.getElementById("btn__sound-9"), "p", document.getElementById("audio-9"));
+console.log(tomGrave4);
+var soundboard = [baguetteBattrie, baguetteBattrieBlague, caisseClaire1, caisseClaire4, charlestonFermee, cymbaleRide, tomAigu1, tomGrave1, tomGrave4];
+
+function startPlaying() {
+  window.addEventListener("keydown", function (event) {
+    soundboard.forEach(function (instru) {
+      if (event.key == instru.key) {
+        (0, _fonction.playAudio)(instru.audio);
+        (0, _fonction.bgChange)(instru.button, instru.audio);
+      }
+    });
+  });
+}
+
+startPlaying();
+},{"./item":"js/item.js","./fonction":"js/fonction.js"}],"../../../Users/Photocopie/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -240,7 +229,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54798" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53849" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

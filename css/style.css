@@ -69,4 +69,8 @@ button.sound-active {
     justify-content: center;
     margin: 0 5%;
   }
+  
+  body{
+    background-color: #1D0F2F;
+  }
 } 
